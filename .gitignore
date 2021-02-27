@@ -1,0 +1,6 @@
+venv
+*.bz2
+__pycache__
+.idea/
+.env
+.log

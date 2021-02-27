@@ -1,0 +1,10 @@
+[mysqld]
+character-set-server = utf8
+collation-server = utf8_unicode_ci
+skip-character-set-client-handshake
+innodb_flush_log_at_trx_commit = 0
+innodb_read_io_threads = 64
+innodb_write_io_threads = 64
+innodb_log_buffer_size = 1024M
+innodb_buffer_pool_size = 12G
+innodb_buffer_pool_chunk_size=256M

@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  # BASE CONFIG OF DATABASE - TABLE SETUP
+  base-db: &setup
+    build:
+      context: ./
+      args:
+        setup_file: setup.sql
+
+  # DATABASE LOCAL DEVELOPMENT SETUP
+  db:
+    <<: *setup
+    container_name: db_assign2
+    env_file:
+      - "db.env"
+    ports:
+    - "3306:3306" # maps container port to host port
+    networks:
+      - backend
+
+networks:
+  backend:
